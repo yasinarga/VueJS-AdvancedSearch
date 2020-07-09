@@ -30,9 +30,9 @@
 <script>
 // @ is an alias to /src
 import { Component, Vue } from 'vue-property-decorator';
-import SelectComponent from "@/views/select.vue";
-import DateComponent from "@/views/date.vue";
-import InputComponent from "@/views/input-comp.vue";
+import SelectComponent from "@/components/select.vue";
+import DateComponent from "@/components/date.vue";
+import InputComponent from "@/components/input-comp.vue";
 import data from '../assets/filters.json';
 
 

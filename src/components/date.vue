@@ -13,7 +13,6 @@
         props: {
             date :{}
         }
-
     }
 </script>
 
