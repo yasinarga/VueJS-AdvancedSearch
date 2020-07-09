@@ -1,7 +1,7 @@
 <template>
     <label>
         {{input.title}}
-        <input type="text" :name="input.name" v-on:change="sendData" class="form-control" :placeholder="input.name" v-model="input.value">
+        <input type="text" :name="input.name" @keyup="sendData" class="form-control" :placeholder="input.name" v-model="input.value">
     </label>
 </template>
 
@@ -9,7 +9,8 @@
     export default {
         name: 'input-component',
         props:{
-            input :{}
+            input :{},
+            index : {}
         },
         data() {
             return {
@@ -17,10 +18,11 @@
             }
         },
         methods :{
-            sendData (){
-                this.$emit( )
-            }
+            sendData :function () {
+                this.$emit('sendData', this.index, this.input.value);
+            },
         }
+
 
     }
 </script>

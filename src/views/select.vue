@@ -1,7 +1,7 @@
 <template>
     <label>
         {{selectData.title}}
-        <select v-model="selectData.value" :name="selectData.name" class="form-control">
+        <select v-model="selectData.value" @change="sendData" :name="selectData.name" class="form-control">
             <option v-for="(item,index) in selectData.options" :key="index" :value="item.value">{{item.text}}</option>
         </select>
     </label>
@@ -11,12 +11,13 @@
     export default {
         name: "select-component",
         props:{
-            selectData: {}
+            selectData: {},
+            index : {}
         },
         methods: {
-            deneme(){
-                console.log(this.props)
-            }
+            sendData :function () {
+                this.$emit('sendData', this.index, this.selectData.value);
+            },
         }
     }
 </script>
