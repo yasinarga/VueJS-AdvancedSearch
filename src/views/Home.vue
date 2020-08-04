@@ -6,9 +6,11 @@
     </div>
     <div class="grid">
       <div v-for="(item, index) in arr.slice(0, arrLimit)" v-bind:key="index">
-        <input-component v-if="item.type === 'text'" v-bind:input="item" v-bind:index="index" v-on:sendData="updateData"></input-component>
-        <select-component v-if="item.type === 'select'" v-bind:select-data="item" v-bind:index="index" v-on:sendData="updateData"></select-component>
-        <date-component v-if="item.type ==='date'" v-bind:date="item"></date-component>
+        <input-component v-if="item.type === 'text'" v-bind:input="item" v-bind:index="index"
+                         v-on:sendData="updateData"/>
+        <select-component v-if="item.type === 'select'" v-bind:select-data="item" v-bind:index="index"
+                          v-on:sendData="updateData"/>
+        <date-component v-if="item.type ==='date'" v-bind:date="item"/>
       </div>
     </div>
     <div class="actionButtons">
